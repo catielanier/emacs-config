@@ -167,74 +167,23 @@ Place the following files in:
  :config (default +bindings +smartparens))
 ```
 
----
+# 4. Complete setup
 
-## packages.el
+Run the following command:
 
-```elisp
-(package! svelte-mode)
-(package! vue-mode)
-(package! rose-pine-theme)
-
-(package! copilot
-  :recipe (:host github :repo "zerolfx/copilot.el"
-           :files ("*.el" "dist")))
+```
+~/.emacs.d/bin/doom sync
 ```
 
----
+This will install everything added in the packages file.
 
-## config.el
+Optional step:
 
-```elisp
-;; Theme
-(setq doom-theme 'rose-pine-moon)
-
-;; Project directories
-(after! projectile
-  (setq projectile-project-search-path '("~/projects" "~/code" "~/src")))
-
-;; --------------------
-;; Copilot Integration
-;; --------------------
-(use-package! copilot
-  :hook (prog-mode . copilot-mode)
-  :config
-  ;; Don’t clutter modeline
-  (delq 'copilot-mode minor-mode-list)
-
-  ;; Inline suggestion controls
-  (define-key copilot-mode-map (kbd "C-<tab>") #'copilot-accept-completion)
-  (define-key copilot-mode-map (kbd "M-\\")    #'copilot-accept-completion)
-  (define-key copilot-mode-map (kbd "C-]")     #'copilot-next-completion)
-  (define-key copilot-mode-map (kbd "C-[")     #'copilot-previous-completion)
-  (define-key copilot-mode-map (kbd "C-;")     #'copilot-clear-overlay))
-
-;; --------------------
-;; AI Prefix: SPC a
-;; --------------------
-(map! :leader "a" nil)  ;; unbind SPC a
-
-(map! :leader
-      (:prefix-map ("a" . "AI")
-       :desc "Accept completion"  "a" #'copilot-accept-completion
-       :desc "Next suggestion"    "n" #'copilot-next-completion
-       :desc "Previous suggestion" "p" #'copilot-previous-completion
-       :desc "Clear suggestion"   "c" #'copilot-clear-overlay))
+```
+~/.emacs.d/bin/doom build
 ```
 
----
-
-# 🌸 4. Theme Options (Rosé Pine)
-
-Pick one:
-
-```elisp
-(setq doom-theme 'rose-pine)
-(setq doom-theme 'rose-pine-moon)
-(setq doom-theme 'rose-pine-dawn)
-```
-
----
+Make sure to restart emacs after doing this.
 
 # 🤖 5. Activate GitHub Copilot
 
