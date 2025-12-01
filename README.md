@@ -49,7 +49,8 @@ sudo npm install -g \
   pyright \
   bash-language-server \
   yaml-language-server \
-  dockerfile-language-server-nodejs
+  dockerfile-language-server-nodejs \
+  @github/copilot-language-server
 ```
 
 ### Additional LSP servers
@@ -86,7 +87,8 @@ npm install -g \
   pyright \
   yaml-language-server \
   bash-language-server \
-  dockerfile-language-server-nodejs
+  dockerfile-language-server-nodejs \
+  @github/copilot-language-server
 ```
 
 ### Additional
