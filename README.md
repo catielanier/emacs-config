@@ -131,42 +131,6 @@ Place the following files in:
 
 ---
 
-## init.el
-
-```elisp
-(doom!
- :completion (company +childframe) (vertico +icons)
-
- :ui doom modeline hl-todo popup (vc-gutter +pretty) workspaces treemacs
-
- :editor (evil +everywhere) file-templates fold (format +onsave) snippets
-
- :emacs (dired +icons) electric undo vc
-
- :term vterm
-
- :checkers syntax (spell +everywhere) grammar
-
- :tools (eval +overlay) (lookup +dictionary +offline) (lsp +peek) magit rgb tree-sitter docker
-
- :lang
- (web +lsp)
- (javascript +lsp)
- (json +lsp)
- (go +lsp)
- (python +lsp +pyright)
- (csharp +lsp)
- (rust +lsp)
- (php +lsp)
- (ruby +lsp)
- (kotlin +lsp)
- (java +lsp)
- (markdown +grip)
- yaml sh
-
- :config (default +bindings +smartparens))
-```
-
 # 4. Complete setup
 
 Run the following command:
@@ -184,6 +148,8 @@ Optional step:
 ```
 
 Make sure to restart emacs after doing this.
+
+---
 
 # 🤖 5. Activate GitHub Copilot
 
